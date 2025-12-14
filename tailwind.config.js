@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import animate from "tailwindcss-animate" // Add this import
+import animate from "tailwindcss-animate"
 
 export default {
   content: [
@@ -7,7 +7,6 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    // ... keep your existing theme settings ...
     container: {
       center: true,
       padding: '2rem',
@@ -20,11 +19,12 @@ export default {
       },
     },
     extend: {
-      animation: {
-        'spin-slow': 'spin 3s linear infinite',
-      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        anton: ['Anton', 'sans-serif'], // Added Anton font
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
       },
     },
   },
