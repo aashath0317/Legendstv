@@ -126,16 +126,18 @@ export default function App() {
                 PLAYERS<span className="text-red-600">TV</span>
             </div>
             
-            <nav className="hidden md:flex space-x-8 items-center text-sm font-bold uppercase tracking-wide">
-                <a href="#mission" className="hover:text-red-500 transition">Mission</a>
-                <a href="#platform" className="hover:text-red-500 transition">Platform</a>
-                <a href="#team" className="hover:text-red-500 transition">Team</a>
-                <a href="#faq" className="hover:text-red-500 transition">FAQ</a>
+            <nav className="hidden lg:flex space-x-6 items-center text-xs font-bold uppercase tracking-wider text-gray-300">
+                <a href="#opportunity" className="hover:text-white transition">Opportunity</a>
+                <a href="#innovation" className="hover:text-white transition">Innovation</a>
+                <a href="#traction" className="hover:text-white transition">Traction</a>
+                <a href="#roadmap" className="hover:text-white transition">Roadmap</a>
+                <a href="#team" className="hover:text-white transition">Team</a>
+                <a href="#discussion" className="hover:text-white transition">Discussion</a>
                 {/* Applied the 'animated' prop here for the glow effect */}
-                <Button className="py-2 px-6 text-xs" animated={true}>Invest Now</Button>
+                <Button className="py-2 px-6 text-xs ml-4" animated={true}>Invest Now</Button>
             </nav>
 
-            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="lg:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 {isMenuOpen ? <X /> : <Menu />}
             </button>
             </div>
@@ -143,10 +145,10 @@ export default function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-black border-t border-gray-800 absolute top-full left-0 right-0 p-6 flex flex-col space-y-6 shadow-2xl animate-in slide-in-from-top-5">
-            <a href="#mission" onClick={() => setIsMenuOpen(false)} className="block text-xl font-bold uppercase hover:text-red-600">Mission</a>
-            <a href="#platform" onClick={() => setIsMenuOpen(false)} className="block text-xl font-bold uppercase hover:text-red-600">Platform</a>
-            <a href="#team" onClick={() => setIsMenuOpen(false)} className="block text-xl font-bold uppercase hover:text-red-600">Team</a>
+          <div className="lg:hidden bg-black border-t border-gray-800 absolute top-full left-0 right-0 p-6 flex flex-col space-y-6 shadow-2xl animate-in slide-in-from-top-5">
+            <a href="#opportunity" onClick={() => setIsMenuOpen(false)} className="block text-xl font-bold uppercase hover:text-red-600">Opportunity</a>
+            <a href="#innovation" onClick={() => setIsMenuOpen(false)} className="block text-xl font-bold uppercase hover:text-red-600">Innovation</a>
+            <a href="#traction" onClick={() => setIsMenuOpen(false)} className="block text-xl font-bold uppercase hover:text-red-600">Traction</a>
             <Button className="w-full text-center" animated={true}>Invest Now</Button>
           </div>
         )}
@@ -163,69 +165,77 @@ export default function App() {
              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start relative z-10">
           
-          {/* Hero Content */}
-          <div className="space-y-8 animate-in slide-in-from-left duration-700 fade-in">
-            <div className="inline-block px-3 py-1 bg-red-600/20 border border-red-600/50 rounded text-red-500 text-xs font-bold uppercase tracking-widest mb-2">
-                Athlete Owned • Fan Fuelled
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tight">
-              Join Sports <br /> Icons In <br />
-              Building The <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700">Future</span>
+          {/* Hero Content (Left) */}
+          <div className="space-y-6 animate-in slide-in-from-left duration-700 fade-in pt-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight">
+              Join Sports Icons In <br />
+              Building One of The <br />
+              First Ever <span className="text-white">Athlete-Fan</span> <br />
+              Owned Media Companies
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed">
-              Invest alongside Chris Paul, Dwyane Wade, and 50+ athletes in the first ever athlete-owned media network.
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl">
+              We're making history as the first-ever athlete and fan-owned media platform. With 50+ athlete investors, diverse content, and cutting-edge distribution, our mission is well underway. And for a limited time, we're opening our unique ownership model to investors like you.
+            </p>
+            <p className="text-white font-bold text-base md:text-lg">
+                Become a shareholder as we redefine how fans engage with athletes.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button animated={true}>Invest Now</Button>
-              <Button primary={false} className="flex items-center gap-2">
-                <Play size={16} className="fill-white" /> Watch Trailer
-              </Button>
+            <div className="pt-4">
+              <Button animated={true} className="w-full md:w-auto text-sm md:text-base py-4">Join Us To Make History And Invest Now</Button>
             </div>
-
-            {/* Funding Stats */}
-            <div className="mt-8 p-6 bg-gray-900/80 backdrop-blur border border-gray-800 rounded-xl max-w-md">
-              <div className="flex justify-between text-sm font-bold mb-3 uppercase tracking-wider">
-                <span className="text-white">$1,240,500 Raised</span>
-                <span className="text-gray-500">Goal: $5M</span>
-              </div>
-              <div className="w-full bg-gray-800 h-3 rounded-full overflow-hidden mb-3">
-                <div className="bg-gradient-to-r from-red-600 to-red-500 h-full w-[25%] rounded-full shadow-[0_0_10px_rgba(220,38,38,0.5)]"></div>
-              </div>
-              <div className="flex justify-between text-xs text-gray-500 font-medium">
-                  <span>1,542 Investors</span>
-                  <span>12 Days Left</span>
-              </div>
+            
+            {/* Links below button */}
+            <div className="flex flex-wrap gap-6 text-[10px] md:text-xs font-bold uppercase tracking-widest text-white underline decoration-gray-600 hover:text-red-500 hover:decoration-red-500 transition-all cursor-pointer">
+                <span>Sec Filings</span>
+                <span>Offering Circular</span>
+                <span>Investor Education</span>
             </div>
           </div>
 
-          {/* Hero Video/Image */}
-          <div className="relative group cursor-pointer animate-in slide-in-from-right duration-700 fade-in delay-200">
-            <div className="relative z-10 aspect-video bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-              <img 
-                src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop" 
-                alt="Chris Paul Intro" 
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition duration-500 scale-105 group-hover:scale-110" 
+          {/* Hero Video & Stats (Right) */}
+          <div className="animate-in slide-in-from-right duration-700 fade-in delay-200">
+             {/* Video Player */}
+            <div className="relative z-10 aspect-video bg-gray-800 border-2 border-gray-800 shadow-2xl mb-1">
+              <video 
+                src="/introvideo.mp4" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                controls
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              
-              {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-24 h-24 bg-red-600/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300 backdrop-blur-sm border-4 border-red-500/30">
-                  <Play className="fill-white ml-2 w-10 h-10" />
-                </div>
-              </div>
-              
-              <div className="absolute bottom-6 left-6">
-                  <p className="text-xs font-bold text-red-500 uppercase tracking-widest mb-1">Featured</p>
-                  <p className="text-xl font-bold uppercase">The Future of Sports Media</p>
-              </div>
             </div>
             
-            {/* Decorative elements behind video */}
-            <div className="absolute -top-4 -right-4 w-full h-full border-2 border-red-600/30 rounded-2xl -z-10"></div>
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 border-2 border-red-900/50 bg-black text-center">
+                {/* Row 1 */}
+                <div className="p-4 border-r border-b border-red-900/50">
+                    <div className="text-xs text-gray-400 font-bold uppercase mb-1">Capital Raised</div>
+                    <div className="text-2xl md:text-3xl font-black text-white">$6.4M</div>
+                </div>
+                <div className="p-4 border-b border-red-900/50">
+                    <div className="text-xs text-gray-400 font-bold uppercase mb-1">Total Athletes</div>
+                    <div className="text-2xl md:text-3xl font-black text-white">50+</div>
+                </div>
+                {/* Row 2 (Spanning differently for layout match) */}
+                <div className="col-span-2 grid grid-cols-3 border-red-900/50">
+                    <div className="p-4 border-r border-red-900/50">
+                        <div className="text-[10px] md:text-xs text-gray-400 font-bold uppercase mb-1">Number Of Investors</div>
+                        <div className="text-xl md:text-2xl font-black text-white">2,200+</div>
+                    </div>
+                    <div className="p-4 border-r border-red-900/50">
+                        <div className="text-[10px] md:text-xs text-gray-400 font-bold uppercase mb-1">Min. Investment</div>
+                        <div className="text-xl md:text-2xl font-black text-white">$1,000</div>
+                    </div>
+                     <div className="p-4">
+                        <div className="text-[10px] md:text-xs text-gray-400 font-bold uppercase mb-1">Share Price</div>
+                        <div className="text-xl md:text-2xl font-black text-white">$5.00</div>
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
       </div>
