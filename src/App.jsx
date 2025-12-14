@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Play, Check, ChevronDown, ChevronUp, Menu, X, ArrowRight, Instagram, Twitter, Linkedin, Facebook, Monitor, Globe, Lock } from 'lucide-react';
+import { Play, Check, ChevronDown, ChevronUp, Menu, X, ArrowRight, Instagram, Twitter, Linkedin, Facebook, Monitor, Globe } from 'lucide-react';
 import { MediaPlayer, MediaProvider } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import '@vidstack/react/player/styles/default/theme.css';
@@ -40,8 +40,8 @@ const Section = ({ children, className = "", id = "" }) => (
   </section>
 );
 
-const SectionHeading = ({ children, align = "center" }) => (
-  <h2 className={`text-4xl md:text-5xl font-anton uppercase mb-8 leading-tight ${align === "center" ? "text-center" : "text-left"} text-white`}>
+const SectionHeading = ({ children, align = "center", color = "text-white" }) => (
+  <h2 className={`text-4xl md:text-6xl font-anton uppercase mb-8 leading-tight ${align === "center" ? "text-center" : "text-left"} ${color}`}>
     {children}
   </h2>
 );
@@ -53,8 +53,8 @@ const BreakingNewsTicker = () => (
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .animate-marquee { animation: marquee 30s linear infinite; }
         
-        /* Slower animation for the athlete slider */
-        .animate-marquee-slow { animation: marquee 40s linear infinite; }
+        /* ADJUSTED SPEED: 40s */
+        .animate-marquee-custom { animation: marquee 40s linear infinite; }
 
         @keyframes glow-pulse { 0% { transform: scale(1); box-shadow: 0 0 0 rgba(220,38,38,0); } 50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(220,38,38,0.7); } 100% { transform: scale(1); box-shadow: 0 0 0 rgba(220,38,38,0); } }
         .animate-glow-pulse { animation: glow-pulse 2s infinite ease-in-out; }
@@ -141,7 +141,6 @@ export default function App() {
         </div>
 
         <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
-          {/* Left Content */}
           <div className="space-y-8 pt-4 text-center lg:text-left">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-anton uppercase leading-[0.9] tracking-tight">
               Join Sports Icons In <br />
@@ -175,7 +174,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Right Content */}
           <div className="flex flex-col w-full shadow-2xl mt-8 lg:mt-0">
             <div className="w-full aspect-video bg-black border border-gray-800 border-b-0 relative z-10 group">
               <MediaPlayer
@@ -222,38 +220,24 @@ export default function App() {
         </div>
       </div>
 
-      {/* --- 50+ PROFESSIONAL ATHLETE INVESTORS (MOVING MARQUEE - NO BOX) --- */}
-      <div className="bg-black py-20 border-y border-gray-800 overflow-hidden">
+      {/* --- 50+ PROFESSIONAL ATHLETE INVESTORS (BG: #181818) --- */}
+      <div className="bg-[#181818] py-20 border-y border-gray-800 overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <h3 className="text-center font-anton text-3xl md:text-4xl uppercase text-white mb-16 tracking-wide">
             50+ Professional Athlete Investors
           </h3>
         </div>
 
-        {/* Infinite Scroll Container */}
         <div className="flex w-full overflow-hidden mask-image-gradient">
-          <div className="animate-marquee-slow flex items-center gap-16 pl-16">
-            {/* Duplicated list for seamless loop */}
+          <div className="animate-marquee-custom flex items-center gap-12 pl-12">
             {[...athletes, ...athletes, ...athletes].map((athlete, i) => (
-              <div key={i} className="flex flex-col items-center shrink-0 group cursor-pointer">
-                {/* Image Container - Clean, no box */}
-                <div className="relative w-40 h-56 md:w-48 md:h-64 overflow-hidden rounded-lg">
-                  <img
-                    src={athlete.img}
-                    alt={athlete.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 transform group-hover:scale-110"
-                  />
-
-                  {/* Minimal Play Icon on Hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition duration-300">
-                      <Play className="fill-white w-5 h-5 ml-1" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Name */}
-                <p className="mt-6 text-sm font-bold uppercase text-gray-500 group-hover:text-white transition font-anton tracking-widest text-center">
+              <div key={i} className="flex flex-col items-center shrink-0 space-y-4">
+                <img
+                  src={athlete.img}
+                  alt={athlete.name}
+                  className="h-64 w-auto max-w-none object-contain rounded-md"
+                />
+                <p className="text-sm font-bold uppercase text-gray-400 font-anton tracking-widest text-center">
                   {athlete.name}
                 </p>
               </div>
@@ -261,6 +245,61 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* --- OPPORTUNITY SECTION (BG WHITE/TEXTURE) --- */}
+      <section
+        id="opportunity"
+        className="py-24 relative bg-white text-black bg-cover bg-center"
+        style={{ backgroundImage: "url('/opportunity_bg.webp')" }}
+      >
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+          {/* Left Content */}
+          <div className="space-y-6">
+            <div className="text-red-600 font-black italic uppercase tracking-wider text-sm">Opportunity</div>
+            <SectionHeading align="left" color="text-black">
+              Athletes Are Redefining <br /> The New Creator Economy
+            </SectionHeading>
+            <p className="text-gray-700 text-lg leading-relaxed font-medium">
+              Athletes are no longer just the faces of brands – they <span className="italic font-bold">are</span> the brands, building empires and turning fan engagement into monetization. By redefining the creator economy, they're disrupting a $75B+ global sports media market and shifting power from corporations to creators.
+            </p>
+          </div>
+
+          {/* Right Content - BY THE NUMBERS */}
+          <div className="flex flex-col">
+            <div className="bg-red-600 text-white font-bold text-center py-3 uppercase tracking-widest text-sm">
+              By The Numbers
+            </div>
+            <div className="grid grid-cols-2 bg-black border-2 border-black">
+              <div className="p-8 text-center border-r border-b border-gray-800">
+                <div className="text-4xl md:text-5xl font-anton text-white mb-2">$75B</div>
+                <div className="text-[10px] uppercase font-bold text-gray-400 leading-tight">Estimated Global Sports Media<br />Market Size by 2028</div>
+              </div>
+              <div className="p-8 text-center border-b border-gray-800">
+                <div className="text-4xl md:text-5xl font-anton text-white mb-2">30%+</div>
+                <div className="text-[10px] uppercase font-bold text-gray-400 leading-tight">Annual Growth in Athlete-Driven<br />Audience Engagement</div>
+              </div>
+              <div className="p-8 text-center border-r border-gray-800">
+                <div className="text-4xl md:text-5xl font-anton text-white mb-2">$480B</div>
+                <div className="text-[10px] uppercase font-bold text-gray-400 leading-tight">Estimated Creator Economy<br />Market Size by 2027</div>
+              </div>
+              <div className="p-8 text-center">
+                <div className="text-4xl md:text-5xl font-anton text-white mb-2">28%+</div>
+                <div className="text-[10px] uppercase font-bold text-gray-400 leading-tight">Compound Annual Growth Rate<br />Of Digital Sports Content</div>
+              </div>
+            </div>
+
+            {/* Goldman Sachs Quote Box */}
+            <div className="mt-6 bg-white border border-gray-300 p-6 flex items-start gap-4 shadow-lg">
+              <div className="bg-[#7399C6] text-white p-2 text-xs font-serif leading-none shrink-0 w-16 text-center">
+                Goldman<br />Sachs
+              </div>
+              <p className="text-gray-800 text-sm font-medium italic">
+                "The creator economy could approach <span className="text-red-600 font-bold">half a-trillion dollars by 2027</span>"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* --- MISSION SECTION --- */}
       <Section id="mission" className="bg-zinc-950">
@@ -390,8 +429,8 @@ export default function App() {
           Led by media veterans and iconic athletes committed to the vision.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {/* UPDATED FOUNDERS */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+          {/* UPDATED FOUNDERS AND TEAM */}
           {[
             { name: "Akeel Asath", role: "Co-Founder", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" },
             { name: "Chad Morton", role: "Co-Founder", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" },
@@ -401,6 +440,8 @@ export default function App() {
             { name: "Travis Kelce", role: "Investor", img: "/Travis Kelce.avif" },
             { name: "Carmelo Anthony", role: "Investor", img: "/Carmelo Anthony.avif" },
             { name: "Kyrie Irving", role: "Investor", img: "/Kyrie Irving.avif" },
+            { name: "Damian Lillard", role: "Investor", img: "/Damian Lillard.avif" },
+            { name: "Chiney Ogwumike", role: "Investor", img: "/Chiney Ogwumike.avif" },
           ].map((member, i) => (
             <div key={i} className="group relative overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:border-red-600/50 transition duration-500">
               <div className="aspect-[3/4] overflow-hidden">
@@ -419,54 +460,6 @@ export default function App() {
           ))}
         </div>
       </Section>
-
-      {/* --- TESTIMONIALS / PRESS --- */}
-      <div className="bg-white text-black py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="text-red-600 mb-6 flex justify-center">
-            <div className="flex gap-1">
-              {[1, 2, 3, 4, 5].map(s => <div key={s} className="w-4 h-4 bg-red-600 rounded-full"></div>)}
-            </div>
-          </div>
-          <h3 className="text-3xl md:text-4xl font-black uppercase mb-12 italic leading-tight">"Revolutionizing the way athletes connect with fans and monetize their brand."</h3>
-
-          <div className="grid grid-cols-3 gap-8 items-center opacity-60 grayscale">
-            <div className="text-2xl font-black">FORBES</div>
-            <div className="text-2xl font-black">BLOOMBERG</div>
-            <div className="text-2xl font-black">VARIETY</div>
-          </div>
-        </div>
-      </div>
-
-      {/* --- FAQ SECTION --- */}
-      <Section id="faq" className="max-w-3xl">
-        <SectionHeading>Invest FAQ</SectionHeading>
-        <div className="space-y-4 mt-8">
-          <FAQItem question="What is the minimum investment?" answer="The minimum investment amount is $250. We want to make ownership accessible to all fans." />
-          <FAQItem question="When will I receive my shares?" answer="Shares are distributed after the campaign closes and the funds are settled, typically within 30-60 days." />
-          <FAQItem question="Can international investors participate?" answer="Yes, investors from most countries can participate, subject to local laws and regulations." />
-          <FAQItem question="What are the perks?" answer="Perks vary by investment tier, including exclusive merch, access to events, and meet-and-greets." />
-          <FAQItem question="How do I make a return?" answer="Returns may come through dividends if the company is profitable, or through an exit event such as an IPO or acquisition." />
-        </div>
-      </Section>
-
-      {/* --- BOTTOM CTA --- */}
-      <div className="bg-red-600 py-24 text-center px-6 relative overflow-hidden group">
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition duration-500"></div>
-        {/* Animated Background Text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-black/10 whitespace-nowrap pointer-events-none select-none">
-          JOIN NOW
-        </div>
-
-        <div className="relative z-10">
-          <h2 className="text-4xl md:text-7xl font-black uppercase mb-6 text-white drop-shadow-lg">Don't Miss The Shot</h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto font-medium">Join the team that is changing the game forever.</p>
-          <Button className="bg-black text-white hover:bg-gray-900 hover:scale-105 border-none px-12 py-5 text-xl shadow-2xl">
-            Invest Now
-          </Button>
-          <p className="mt-6 text-white/70 text-sm font-semibold">1,500+ Investors • Ends Soon</p>
-        </div>
-      </div>
 
       {/* --- FOOTER --- */}
       <footer className="bg-black py-20 border-t border-gray-900">
