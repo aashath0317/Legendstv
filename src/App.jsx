@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Play, Check, ChevronDown, ChevronUp, Menu, X, ArrowRight, Instagram, Twitter, Linkedin, Facebook, Monitor, Globe } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Play, Check, ChevronDown, ChevronUp, Menu, X, ArrowRight, Instagram, Twitter, Linkedin, Facebook, Monitor, Globe, Home, DollarSign, Users, Video, CheckCircle2, Circle } from 'lucide-react';
 import { MediaPlayer, MediaProvider } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import '@vidstack/react/player/styles/default/theme.css';
@@ -58,21 +58,29 @@ const BreakingNewsTicker = () => (
 
         @keyframes glow-pulse { 0% { transform: scale(1); box-shadow: 0 0 0 rgba(220,38,38,0); } 50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(220,38,38,0.7); } 100% { transform: scale(1); box-shadow: 0 0 0 rgba(220,38,38,0); } }
         .animate-glow-pulse { animation: glow-pulse 2s infinite ease-in-out; }
+
+        /* TEXT GLOW */
+        .text-glow { text-shadow: 0 0 20px rgba(220,38,38,0.8), 0 0 40px rgba(220,38,38,0.4); }
+
+        /* ICON GLOW */
+        .icon-glow { filter: drop-shadow(0 0 8px rgba(220,38,38,0.8)) drop-shadow(0 0 15px rgba(220,38,38,0.4)); }
       `}
     </style>
     <div className="bg-red-600 text-white text-xs font-black uppercase px-4 h-full flex items-center z-20 relative shrink-0 shadow-[4px_0_10px_rgba(0,0,0,0.5)] skew-x-[-10deg] -ml-2 pl-6">
       <span className="skew-x-[10deg]">Breaking News:</span>
     </div>
     <div className="flex items-center w-full overflow-hidden whitespace-nowrap">
-      <div className="animate-marquee flex items-center">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="flex items-center">
-            <span className="text-gray-300 text-xs font-bold uppercase tracking-wide px-4">Watch Co-Founder <span className="text-white">Akeel Asath</span> on Bloomberg</span>
-            <span className="text-red-600 mx-2 text-[10px]">●</span>
-            <span className="text-gray-300 text-xs font-bold uppercase tracking-wide px-4">Invest in the <span className="text-white">Future of LegendsTV</span> today</span>
-            <span className="text-red-600 mx-2 text-[10px]">●</span>
-          </div>
-        ))}
+      <div className="animate-marqueeVZ flex items-center w-max">
+        <div className="flex items-center animate-marquee">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="flex items-center">
+              <span className="text-gray-300 text-xs font-bold uppercase tracking-wide px-4">Watch Co-Founder <span className="text-white">Akeel Asath</span> on Bloomberg</span>
+              <span className="text-red-600 mx-2 text-[10px]">●</span>
+              <span className="text-gray-300 text-xs font-bold uppercase tracking-wide px-4">Invest in the <span className="text-white">Future of LegendsTV</span> today</span>
+              <span className="text-red-600 mx-2 text-[10px]">●</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </div>
@@ -123,7 +131,7 @@ export default function App() {
             <nav className="hidden lg:flex space-x-8 items-center text-xs font-bold uppercase tracking-wider text-gray-300">
               <a href="#mission" className="hover:text-white transition">Opportunity</a>
               <a href="#platform" className="hover:text-white transition">Platform</a>
-              <a href="#team" className="hover:text-white transition">Team</a>
+              <a href="#roadmap" className="hover:text-white transition">Roadmap</a>
               <Button className="py-3 px-8 text-xs ml-4" animated={true}>Invest Now</Button>
             </nav>
 
@@ -177,11 +185,11 @@ export default function App() {
           <div className="flex flex-col w-full shadow-2xl mt-8 lg:mt-0">
             <div className="w-full aspect-video bg-black border border-gray-800 border-b-0 relative z-10 group">
               <MediaPlayer
-                src="https://mydrive.akeelaasath.workers.dev/0:/gary_sources/1.mp4"
+                src="https://mydrive.akeelaasath.workers.dev/0:/gary_sources/introvideo1.mp4"
                 viewType="video"
                 streamType="on-demand"
                 logLevel="warn"
-                // crossOrigin removed
+                crossOrigin
                 playsInline
                 autoPlay
                 muted
@@ -235,7 +243,7 @@ export default function App() {
                 <img
                   src={athlete.img}
                   alt={athlete.name}
-                  className="h-64 w-auto max-w-none object-contain rounded-md"
+                  className="h-64 w-auto max-w-none object-containZS rounded-md"
                 />
                 <p className="text-sm font-bold uppercase text-gray-400 font-anton tracking-widest text-center">
                   {athlete.name}
@@ -391,68 +399,132 @@ export default function App() {
         })()}
       </Section>
 
-      {/* --- COMPARISON / WHY INVEST --- */}
-      <div className="bg-zinc-900 py-24 border-y border-gray-800">
-        <Section>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            <div className="lg:col-span-2">
-              <h2 className="text-4xl font-anton uppercase mb-6 leading-none">Why Invest <br /> <span className="text-red-600">Now?</span></h2>
-              <p className="text-gray-400 mb-8 leading-relaxed">
-                The traditional media model is broken. LegendsTV is the solution, bridging the gap between massive athlete social reach and premium long-form content.
-              </p>
-              <Button className="w-full md:w-auto">View Pitch Deck</Button>
+      {/* --- TRACTION SECTION (Replaces Why Invest) --- */}
+      <section className="bg-black border-y border-gray-800 overflow-hidden">
+        <div className="flex flex-col lg:flex-row h-auto lg:h-[800px]">
+          {/* Left Side: Stats */}
+          <div className="lg:w-1/2 p-8 lg:p-20 flex flex-col justify-center bg-black relative z-10">
+            <div className="mb-2">
+              <span className="text-gray-400 font-bold italic uppercase tracking-wider text-sm">Traction</span>
             </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-anton uppercase leading-[0.9] text-white mb-12">
+              Full 360 Media <br /> Distribution Ecosystem
+            </h2>
 
-            <div className="lg:col-span-3 bg-black/50 p-8 rounded-2xl border border-gray-800">
-              <div className="space-y-8">
-                <ComparisonRow title="Athlete Equity" desc="Athletes are owners, not just talent. This aligns incentives for long-term growth." />
-                <ComparisonRow title="Scalable Tech" desc="Proprietary distribution technology delivering content to 300M+ devices instantly." />
-                <ComparisonRow title="Diverse Revenue" desc="Multiple streams including Advertising, Subscriptions, Merch, and Live Events." />
-                <ComparisonRow title="Market Timing" desc="Sports media rights are skyrocketing while the Creator Economy is booming." />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+              {/* Stat 1 */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-3 mb-2">
+                  <Home className="text-red-600 w-8 h-8 icon-glow" strokeWidth={2.5} />
+                  <span className="text-5xl font-anton text-red-600 text-glow">300M+</span>
+                </div>
+                <p className="text-gray-300 font-bold uppercase text-xs tracking-wider">
+                  available homes and devices.
+                </p>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-3 mb-2">
+                  <DollarSign className="text-red-600 w-8 h-8 icon-glow" strokeWidth={2.5} />
+                  <span className="text-5xl font-anton text-red-600 text-glow">200M+</span>
+                </div>
+                <p className="text-gray-300 font-bold uppercase text-xs tracking-wider">
+                  available monthly advertising impressions.
+                </p>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-3 mb-2">
+                  <Users className="text-red-600 w-8 h-8 icon-glow" strokeWidth={2.5} />
+                  <span className="text-5xl font-anton text-red-600 text-glow">250M+</span>
+                </div>
+                <p className="text-gray-300 font-bold uppercase text-xs tracking-wider">
+                  total aggregate athlete social media following.
+                </p>
+              </div>
+
+              {/* Stat 4 */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-3 mb-2">
+                  <Video className="text-red-600 w-8 h-8 icon-glow" strokeWidth={2.5} />
+                  <span className="text-5xl font-anton text-red-600 text-glow">10+</span>
+                </div>
+                <p className="text-gray-300 font-bold uppercase text-xs tracking-wider">
+                  originally produced series featuring over 30 athletes.
+                </p>
               </div>
             </div>
           </div>
-        </Section>
-      </div>
 
-      {/* --- TEAM SECTION --- */}
-      <Section id="team">
-        <SectionHeading>The Team</SectionHeading>
-        <p className="text-center text-gray-400 max-w-2xl mx-auto mb-16 text-lg">
-          Led by media veterans and iconic athletes committed to the vision.
-        </p>
+          {/* Right Side: Posters Marquee */}
+          <div className="lg:w-1/2 bg-zinc-900 relative overflow-hidden flex items-center">
+            {/* Gradient Overlays for smooth edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black via-black/50 to-transparent z-20 pointer-events-none hidden lg:block"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-zinc-900 via-zinc-900/50 to-transparent z-20 pointer-events-none hidden lg:block"></div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-          {/* UPDATED FOUNDERS AND TEAM */}
-          {[
-            { name: "Akeel Asath", role: "Co-Founder", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" },
-            { name: "Chad Morton", role: "Co-Founder", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" },
-            { name: "Chris Paul", role: "Investor", img: "/Chris Paul.avif" },
-            { name: "Dwyane Wade", role: "Investor", img: "/Dwyane Wade.avif" },
-            { name: "Ken Griffey Jr", role: "Investor", img: "/Ken Griffey Jr.avif" },
-            { name: "Travis Kelce", role: "Investor", img: "/Travis Kelce.avif" },
-            { name: "Carmelo Anthony", role: "Investor", img: "/Carmelo Anthony.avif" },
-            { name: "Kyrie Irving", role: "Investor", img: "/Kyrie Irving.avif" },
-            { name: "Damian Lillard", role: "Investor", img: "/Damian Lillard.avif" },
-            { name: "Chiney Ogwumike", role: "Investor", img: "/Chiney Ogwumike.avif" },
-          ].map((member, i) => (
-            <div key={i} className="group relative overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:border-red-600/50 transition duration-500">
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 scale-100 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
-                <h4 className="font-anton text-lg uppercase text-white leading-tight">{member.name}</h4>
-                <p className="text-red-500 text-xs font-bold uppercase tracking-wider">{member.role}</p>
-              </div>
+            <div
+              className="flex items-center animate-marquee h-[80%]"
+              style={{ animationDuration: '15s' }}
+            >
+              {/* We duplicate the posters list multiple times to ensure seamless infinite scroll.
+                 Assuming files are named 1.webp through 9.webp in public/poster/
+               */}
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => (
+                <div key={i} className="flex-shrink-0 mx-4 h-full group">
+                  <img
+                    src={`/poster/${num}.webp`}
+                    alt={`Show Poster ${num}`}
+                    className="h-full w-auto object-cover rounded-lg shadow-2xl transform transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* --- ROADMAP SECTION (Replaces Team) --- */}
+      <section id="roadmap" className="bg-black py-24 border-y border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative">
+
+          {/* LEFT: Sticky Text Content */}
+          <div className="hidden lg:block">
+            <div className="sticky top-32">
+              <div className="text-gray-400 font-bold italic uppercase tracking-wider text-sm mb-4">
+                Roadmap
+              </div>
+              <h2 className="text-5xl md:text-6xl font-anton uppercase leading-none text-white mb-8">
+                Built Different: <br /> A Track Record of <br /> Transformation
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed font-medium">
+                PlayersTV is riding massive momentum, fueled by over <span className="text-white font-bold">$6.4M+</span> raised from an unprecedented mix of superstar athletes and 2,200+ passionate fan investors. We've secured marquee distribution across OTT, CTV, and digital platforms, unlocking direct access to millions of fans. Backed by an elite roster of athlete-owners and creators, our content meets the fans where they are. And with the acquisition of game-changing advertising technology, we're now positioned to scale revenue like never before—turning attention into untapped revenue.
+              </p>
+              <p className="text-[10px] text-gray-600 mt-4">*The amount includes related entities.</p>
+            </div>
+          </div>
+
+          {/* MOBILE Header (Non-sticky) */}
+          <div className="lg:hidden mb-8">
+            <div className="text-gray-400 font-bold italic uppercase tracking-wider text-sm mb-4">
+              Roadmap
+            </div>
+            <h2 className="text-4xl font-anton uppercase leading-none text-white mb-4">
+              Built Different: A Track Record of Transformation
+            </h2>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              PlayersTV is riding massive momentum, fueled by over $6.4M+ raised...
+            </p>
+          </div>
+
+          {/* RIGHT: Scrollable Roadmap Items */}
+          <div className="relative pl-8 border-l-2 border-gray-800">
+            <RoadmapList />
+          </div>
+
+        </div>
+      </section>
 
       {/* --- FOOTER --- */}
       <footer className="bg-black py-20 border-t border-gray-900">
@@ -476,16 +548,86 @@ export default function App() {
 }
 
 /**
+ * Roadmap Item List Component with Scroll Trigger
+ */
+const RoadmapList = () => {
+  const items = [
+    { label: "Editorial website launch", status: "completed" },
+    { label: "Original content production", status: "completed" },
+    { label: "Content acquisition & licensing", status: "completed" },
+    { label: "Distribution & Technology", status: "completed" },
+    { label: "Distribution & Technology", status: "completed" },
+    { label: "$6.4M+ Seed Capital Raised", status: "completed" },
+    { label: "Secured 50+ Athletes", status: "completed" },
+    { label: "200M+ Monthly Ad Impressions", status: "completed" },
+    { label: "300M+ Devices in OTT/CTV Distribution", status: "completed" },
+    { label: "170+ Annual Athlete Content Hours", status: "completed" },
+    { label: "Acquired Proprietary Ad Technology", status: "completed" },
+    { label: "Direct-to-Consumer Streaming Launch (Coming Soon)", status: "upcoming" },
+    { label: "Players Studio Launch (Coming Soon)", status: "upcoming" },
+    { label: "Global expansion (Coming Soon)", status: "upcoming" },
+  ];
+
+  return (
+    <div className="space-y-6">
+      {items.map((item, index) => (
+        <RoadmapItem key={index} text={item.label} status={item.status} />
+      ))}
+    </div>
+  );
+};
+
+/**
+ * Individual Roadmap Item
+ * Handles its own intersection observer state
+ */
+const RoadmapItem = ({ text, status }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const domRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setIsVisible(entry.isIntersecting));
+    }, { threshold: 0.5, rootMargin: "-10% 0px -10% 0px" });
+
+    if (domRef.current) observer.observe(domRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const isCompleted = status === "completed";
+  const isActive = isVisible && isCompleted; // Only glow if visible AND completed
+
+  return (
+    <div
+      ref={domRef}
+      className={`
+        transform transition-all duration-700 ease-out flex items-center gap-6 p-6 rounded-lg border
+        ${isActive
+          ? "bg-red-600 border-red-600 translate-x-2 shadow-[0_0_30px_rgba(220,38,38,0.4)]"
+          : "bg-black border-gray-800 opacity-60"
+        }
+      `}
+    >
+      <div className={`
+        shrink-0 w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors duration-500
+        ${isActive ? "border-white bg-white text-red-600" : "border-gray-600 text-transparent"}
+      `}>
+        {isActive ? <Check size={18} strokeWidth={4} /> : <Circle size={18} />}
+      </div>
+
+      <span className={`
+        text-lg md:text-xl font-anton uppercase tracking-wide transition-colors duration-500
+        ${isActive ? "text-white" : "text-gray-500"}
+      `}>
+        {text}
+      </span>
+    </div>
+  );
+};
+
+/**
  * Helper Components
  */
-
-const StatCard = ({ number, label, icon }) => (
-  <div className="bg-zinc-900/50 border border-zinc-800 p-6 rounded-xl text-center hover:bg-zinc-800 transition duration-300 group hover:-translate-y-1">
-    <div className="flex justify-center mb-2 group-hover:scale-110 transition duration-300">{icon}</div>
-    <div className="text-3xl md:text-4xl font-anton text-white mb-2 tracking-tight">{number}</div>
-    <div className="text-xs uppercase font-bold text-gray-500 tracking-widest">{label}</div>
-  </div>
-);
 
 const ComparisonRow = ({ title, desc }) => (
   <div className="flex items-start gap-5 p-4 rounded-lg hover:bg-gray-900/50 transition duration-300">
@@ -498,25 +640,3 @@ const ComparisonRow = ({ title, desc }) => (
     </div>
   </div>
 );
-
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="border border-gray-800 bg-zinc-900/30 rounded-lg overflow-hidden transition-all duration-300 hover:border-gray-700">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-6 text-left hover:bg-zinc-900 transition"
-      >
-        <span className={`font-bold text-lg ${isOpen ? 'text-red-500' : 'text-white'}`}>{question}</span>
-        {isOpen ? <ChevronUp className="text-red-600" /> : <ChevronDown className="text-gray-500" />}
-      </button>
-      <div
-        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
-      >
-        <div className="p-6 pt-0 text-gray-400 leading-relaxed border-t border-gray-800/50 text-sm md:text-base">
-          {answer}
-        </div>
-      </div>
-    </div>
-  );
-};
