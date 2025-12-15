@@ -87,7 +87,7 @@ const BreakingNewsTicker = () => (
 );
 
 /**
- * Athlete Data
+ * Legend Data
  */
 const athletes = [
   { name: "Travis Kelce", img: "/Travis Kelce.avif" },
@@ -163,11 +163,11 @@ export default function App() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-anton uppercase leading-[0.9] tracking-tight">
               Join Sports Icons In <br />
               Building The <br />
-              First Ever <span className="text-red-600">Athlete-Fan</span> <br />
+              First Ever <span className="text-red-600">Legend-Fan</span> <br />
               Owned Media Company
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-              We're making history as the first-ever athlete and fan-owned media platform. With 50+ athlete investors, diverse content, and cutting-edge distribution, our mission is well underway.
+              We're making history as the first-ever Legend and fan-owned media platform. With 50+ Legend investors, diverse content, and cutting-edge distribution, our mission is well underway.
             </p>
 
             <div className="border-l-4 border-red-600 pl-6 bg-white/5 py-5 pr-6 rounded-r-sm text-left max-w-xl">
@@ -175,7 +175,7 @@ export default function App() {
                 What is a "Legend"?
               </p>
               <p className="text-gray-400 text-sm">
-                Any former or current professional athlete, as well as Hollywood actors, defining the culture of tomorrow.
+                Any former or current professional Legend, as well as Hollywood actors, defining the culture of tomorrow.
               </p>
             </div>
 
@@ -215,7 +215,7 @@ export default function App() {
                 <div className="text-4xl lg:text-5xl font-anton text-white">$6.4M</div>
               </div>
               <div className="p-8 border-b border-red-900/40 text-center">
-                <div className="text-xs text-gray-400 font-bold uppercase mb-2 tracking-widest">Total Athletes</div>
+                <div className="text-xs text-gray-400 font-bold uppercase mb-2 tracking-widest">Total Legends</div>
                 <div className="text-4xl lg:text-5xl font-anton text-white">50+</div>
               </div>
               <div className="col-span-2 grid grid-cols-3 divide-x divide-red-900/40">
@@ -237,11 +237,11 @@ export default function App() {
         </div>
       </div>
 
-      {/* --- 50+ PROFESSIONAL ATHLETE INVESTORS (BG: #181818) --- */}
+      {/* --- 50+ PROFESSIONAL Legend  INVESTORS (BG: #181818) --- */}
       <div className="bg-[#181818] py-20 border-y border-gray-800 overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <h3 className="text-center font-anton text-3xl md:text-4xl uppercase text-white mb-16 tracking-wide">
-            50+ Professional Athlete Investors
+            50+ Professional Legend Investors
           </h3>
         </div>
 
@@ -279,10 +279,10 @@ export default function App() {
           <div className="space-y-6">
             <div className="text-red-600 font-black italic uppercase tracking-wider text-sm">Opportunity</div>
             <SectionHeading align="left" color="text-black">
-              Athletes Are Redefining <br /> The New Creator Economy
+              Legends Are Redefining <br /> The New Creator Economy
             </SectionHeading>
             <p className="text-gray-700 text-lg leading-relaxed font-medium">
-              Athletes are no longer just the faces of brands – they <span className="italic font-bold">are</span> the brands, building empires and turning fan engagement into monetization. By redefining the creator economy, they're disrupting a $75B+ global sports media market and shifting power from corporations to creators.
+              Legends are no longer just the faces of brands – they <span className="italic font-bold">are</span> the brands, building empires and turning fan engagement into monetization. By redefining the creator economy, they're disrupting a $75B+ global sports media market and shifting power from corporations to creators.
             </p>
           </div>
 
@@ -298,7 +298,7 @@ export default function App() {
               </div>
               <div className="p-8 text-center border-b border-gray-800">
                 <div className="text-4xl md:text-5xl font-anton text-white mb-2">30%+</div>
-                <div className="text-[10px] uppercase font-bold text-gray-400 leading-tight">Annual Growth in Athlete-Driven<br />Audience Engagement</div>
+                <div className="text-[10px] uppercase font-bold text-gray-400 leading-tight">Annual Growth in Legend-Driven<br />Audience Engagement</div>
               </div>
               <div className="p-8 text-center border-r border-gray-800">
                 <div className="text-4xl md:text-5xl font-anton text-white mb-2">$480B</div>
@@ -392,13 +392,13 @@ export default function App() {
                 </h2>
                 <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
                   <p>
-                    LegendsTV is one of the first-ever athlete-fan owned media companies, built to revolutionize how fans experience athlete-lifestyle content.
+                    LegendsTV is one of the first-ever Legend-fan owned media companies, built to revolutionize how fans experience Legend-lifestyle content.
                   </p>
                   <p>
-                    Our 360° distribution model—spanning streaming, social, and direct-to-consumer platforms—was designed to finally give athletes the power to control their own narratives.
+                    Our 360° distribution model—spanning streaming, social, and direct-to-consumer platforms—was designed to finally give Legends the power to control their own narratives.
                   </p>
                   <p>
-                    LegendsTV flips the script, putting the athletes in charge and unlocking an entirely new category of media.
+                    LegendsTV flips the script, putting the Legends in charge and unlocking an entirely new category of media.
                   </p>
                 </div>
               </div>
@@ -450,7 +450,7 @@ export default function App() {
                   <span className="text-5xl font-anton text-red-600 text-glow">250M+</span>
                 </div>
                 <p className="text-gray-300 font-bold uppercase text-xs tracking-wider">
-                  total aggregate athlete social media following.
+                  total aggregate Legend social media following.
                 </p>
               </div>
 
@@ -461,7 +461,7 @@ export default function App() {
                   <span className="text-5xl font-anton text-red-600 text-glow">10+</span>
                 </div>
                 <p className="text-gray-300 font-bold uppercase text-xs tracking-wider">
-                  originally produced series featuring over 30 athletes.
+                  originally produced series featuring over 30 Legends.
                 </p>
               </div>
             </div>
@@ -509,7 +509,7 @@ export default function App() {
                 Built Different: <br /> A Track Record of <br /> Transformation
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed font-medium">
-                PlayersTV is riding massive momentum, fueled by over <span className="text-white font-bold">$6.4M*</span> raised from an unprecedented mix of superstar athletes and 2,200+ passionate fan investors. We've secured marquee distribution across OTT, CTV, and digital platforms, unlocking direct access to millions of fans. Backed by an elite roster of athlete-owners and creators, our content meets the fans where they are. And with the acquisition of game-changing advertising technology, we're now positioned to scale revenue like never before—turning attention into untapped revenue.
+                PlayersTV is riding massive momentum, fueled by over <span className="text-white font-bold">$6.4M*</span> raised from an unprecedented mix of superstar Legends and 2,200+ passionate fan investors. We've secured marquee distribution across OTT, CTV, and digital platforms, unlocking direct access to millions of fans. Backed by an elite roster of Legend-owners and creators, our content meets the fans where they are. And with the acquisition of game-changing advertising technology, we're now positioned to scale revenue like never before—turning attention into untapped revenue.
               </p>
               <p className="text-[10px] text-gray-600 mt-4">*The amount includes related entities.</p>
             </div>
@@ -546,7 +546,7 @@ export default function App() {
             LEGENDS<span className="text-red-600">TV</span>
           </div>
           <p className="text-gray-500 text-sm mb-8 text-center max-w-sm">
-            The first ever athlete-owned media network and lifestyle ecosystem.
+            The first ever Legend-owned media network and lifestyle ecosystem.
           </p>
           <div className="text-xs text-gray-700">
             &copy; 2025 Legends Media Group. All rights reserved.
@@ -568,10 +568,10 @@ const RoadmapList = () => {
     { label: "Distribution & Technology", status: "completed" },
     { label: "Distribution & Technology", status: "completed" },
     { label: "$6.4M+ Seed Capital Raised", status: "completed" },
-    { label: "Secured 50+ Athletes", status: "completed" },
+    { label: "Secured 50+ Legends", status: "completed" },
     { label: "200M+ Monthly Ad Impressions", status: "completed" },
     { label: "300M+ Devices in OTT/CTV Distribution", status: "completed" },
-    { label: "170+ Annual Athlete Content Hours", status: "completed" },
+    { label: "170+ Annual Legend Content Hours", status: "completed" },
     { label: "Acquired Proprietary Ad Technology", status: "completed" },
     { label: "Direct-to-Consumer Streaming Launch (Coming Soon)", status: "upcoming" },
     { label: "Players Studio Launch (Coming Soon)", status: "upcoming" },
