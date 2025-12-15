@@ -177,11 +177,11 @@ export default function App() {
           <div className="flex flex-col w-full shadow-2xl mt-8 lg:mt-0">
             <div className="w-full aspect-video bg-black border border-gray-800 border-b-0 relative z-10 group">
               <MediaPlayer
-                src="https://mydrive.akeelaasath.workers.dev/0:/gary_sources/introvideo1.mp4"
+                src="https://mydrive.akeelaasath.workers.dev/0:/gary_sources/1.mp4"
                 viewType="video"
                 streamType="on-demand"
                 logLevel="warn"
-                crossOrigin
+                // crossOrigin removed
                 playsInline
                 autoPlay
                 muted
