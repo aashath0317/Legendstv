@@ -15,6 +15,7 @@ const ProtectedRoute = ({ children }) => {
 /**
  * Shared Components
  */
+
 const Button = ({ children, className = "", primary = true, animated = false }) => (
   <button
     className={`
@@ -33,6 +34,71 @@ const Button = ({ children, className = "", primary = true, animated = false }) 
     {children}
   </button>
 );
+
+const ImpactShowcase = () => {
+  const campaigns = [
+    { client: "Ford", title: "Drive Dreams", views: "18MM+", color: "bg-blue-900" },
+    { client: "Sony Pictures", title: "Bad Boys Franchise", views: "13MM+", color: "bg-purple-900" },
+    { client: "Bounty", title: "Cooking Clean", views: "8MM+", color: "bg-green-900" },
+  ];
+
+  const brands = ["Doritos", "Heineken", "Gatorade", "Walmart", "Ford"];
+
+  return (
+    <div className="mt-32 w-full">
+      {/* Header */}
+      <h3 className="font-anton text-3xl md:text-5xl uppercase leading-tight mb-12">
+        Maximizing Impact Through <span className="text-red-600">Athlete-Driven</span> Brand Partnerships
+      </h3>
+
+      {/* Campaign Thumbnails */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {campaigns.map((camp, i) => (
+          <div key={i} className="group relative">
+            {/* Image Placeholder - Replace with actual campaign screenshots if available */}
+            <div className={`aspect-video rounded-xl ${camp.color} bg-opacity-20 border border-white/10 overflow-hidden relative mb-4`}>
+              <div className="absolute inset-0 flex items-center justify-center text-white/20 font-anton text-4xl uppercase tracking-widest">
+                {camp.client}
+              </div>
+            </div>
+
+            {/* Metrics */}
+            <div className="flex justify-between items-end border-b border-white/20 pb-2">
+              <div>
+                <p className="text-sm text-white/60 uppercase tracking-widest mb-1">{camp.client}</p>
+                <p className="font-bold text-lg">{camp.title}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-3xl font-anton text-red-500">{camp.views}</p>
+                <p className="text-xs text-white/40 uppercase">Views Delivered</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Brand Logos Strip */}
+      <div className="border-y border-white/10 py-8 mb-16">
+        <p className="text-center text-sm text-white/40 uppercase tracking-[0.2em] mb-6">
+          Iconic Brands We've Worked With
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+          {brands.map((brand) => (
+            <span key={brand} className="text-xl font-bold font-anton text-white">{brand}</span>
+            // Note: Replace these <span>s with actual <img src="..." /> logos when you have them.
+          ))}
+        </div>
+      </div>
+
+      {/* CTA Button */}
+      <div className="flex justify-center">
+        <Button className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 text-xl w-full md:w-auto">
+          JOIN US TO MAKE HISTORY AND INVEST NOW
+        </Button>
+      </div>
+    </div>
+  );
+};
 
 const Section = ({ children, className = "", id = "" }) => (
   <section id={id} className={`py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto ${className}`}>
@@ -532,8 +598,8 @@ export default function App() {
           </div>
 
         </div>
+        <ImpactShowcase />
       </section>
-
       {/* --- FOOTER --- */}
       <footer className="bg-black py-20 border-t border-gray-900">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
