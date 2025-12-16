@@ -32,11 +32,11 @@ export default function App() {
         <ImpactShowcase />
         <DiveDeeper />
         <MediaShowcase />
-        <Press />
+        {/* <Press />
         <AsSeenIn />
         <Partners />
         <BoardOfDirectors />
-        <FAQ />
+        <FAQ /> */}
       </main>
 
       <Footer />
