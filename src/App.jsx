@@ -8,10 +8,11 @@ import Platform from './components/sections/Platform';
 import Stats from './components/sections/Stats';
 import Roadmap from './components/sections/Roadmap';
 import ImpactShowcase from './components/sections/ImpactShowcase';
-import MediaShowcase from './components/sections/MediaShowcase';
+import DiveDeeper from './components/sections/DiveDeeper';
+//import MediaShowcase from './components/sections/MediaShowcase';
 //import Press from './components/sections/Press';
 //import AsSeenIn from './components/sections/AsSeenIn'; 
-//import DiveDeeper from './components/sections/DiveDeeper';
+
 
 export default function App() {
   return (
@@ -27,8 +28,9 @@ export default function App() {
         <Stats />
         <Roadmap />
         <ImpactShowcase />
-        <MediaShowcase />
-     {/*   <DiveDeeper />
+        <DiveDeeper />
+       {/*  <MediaShowcase />
+       
         
        <Press />
        <AsSeenIn />  Add As Seen In section here */}
