@@ -9,12 +9,12 @@ import Stats from './components/sections/Stats';
 import Roadmap from './components/sections/Roadmap';
 import ImpactShowcase from './components/sections/ImpactShowcase';
 import MediaShowcase from './components/sections/MediaShowcase';
-import Press from './components/sections/Press';
-import AsSeenIn from './components/sections/AsSeenIn';
-import DiveDeeper from './components/sections/DiveDeeper';
-import Partners from './components/sections/Partners';
-import BoardOfDirectors from './components/sections/BoardOfDirectors';
-import FAQ from './components/sections/FAQ';
+//import Press from './components/sections/Press';
+//import AsSeenIn from './components/sections/AsSeenIn';
+//import DiveDeeper from './components/sections/DiveDeeper';
+//import Partners from './components/sections/Partners';
+//import BoardOfDirectors from './components/sections/BoardOfDirectors';
+//import FAQ from './components/sections/FAQ';
 
 export default function App() {
   return (
