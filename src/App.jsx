@@ -10,7 +10,7 @@ import Roadmap from './components/sections/Roadmap';
 import ImpactShowcase from './components/sections/ImpactShowcase';
 import MediaShowcase from './components/sections/MediaShowcase';
 import DiveDeeper from './components/sections/DiveDeeper';
-//import Press from './components/sections/Press';
+import Press from './components/sections/Press';
 //import AsSeenIn from './components/sections/AsSeenIn';
 //
 //import Partners from './components/sections/Partners';
@@ -33,8 +33,8 @@ export default function App() {
         <ImpactShowcase />
         <DiveDeeper />
         <MediaShowcase />
-        {/* <Press />
-        <AsSeenIn />
+        <Press />
+        {/*<AsSeenIn />
         <Partners />
         <BoardOfDirectors />
         <FAQ /> */}
