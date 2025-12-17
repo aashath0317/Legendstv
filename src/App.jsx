@@ -34,8 +34,8 @@ export default function App() {
         <DiveDeeper />
         <MediaShowcase />
         <Press />
-        {/*<AsSeenIn />
-        <Partners />
+        <AsSeenIn />
+        {/*<Partners />
         <BoardOfDirectors />
         <FAQ /> */}
       </main>
