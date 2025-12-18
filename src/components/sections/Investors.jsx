@@ -21,8 +21,17 @@ const Investors = () => {
                 </h3>
             </div>
 
-            <div className="flex w-full overflow-hidden mask-image-gradient">
-                <div className="animate-marquee-custom flex items-center gap-12 pl-12">
+            {/* Added relative positioning for the fade effect overlays if needed */}
+            <div className="relative flex w-full overflow-hidden mask-image-gradient">
+                {/* UPDATED: 
+                   1. Changed 'animate-marquee-custom' to 'animate-marquee'
+                   2. Added style={{ animationDuration: '5s' }} for the 5-second speed
+                */}
+                <div
+                    className="animate-marquee flex items-center gap-12 pl-12"
+                    style={{ animationDuration: '30s' }}
+                >
+                    {/* Tripled list ensures seamless looping */}
                     {[...athletes, ...athletes, ...athletes].map((athlete, i) => (
                         <div key={i} className="flex flex-col items-center shrink-0 space-y-4">
                             <img
