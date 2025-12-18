@@ -12,8 +12,7 @@ import MediaShowcase from './components/sections/MediaShowcase';
 import DiveDeeper from './components/sections/DiveDeeper';
 import Press from './components/sections/Press';
 import AsSeenIn from './components/sections/AsSeenIn';
-//
-//import Partners from './components/sections/Partners';
+import Partners from './components/sections/Partners';
 //import BoardOfDirectors from './components/sections/BoardOfDirectors';
 //import FAQ from './components/sections/FAQ';
 
@@ -35,8 +34,8 @@ export default function App() {
         <MediaShowcase />
         <Press />
         <AsSeenIn />
-        {/*<Partners />
-        <BoardOfDirectors />
+        <Partners />
+       {/* <BoardOfDirectors />
         <FAQ /> */}
       </main>
 
