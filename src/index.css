@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 1. Enable Smooth Scrolling Globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Custom Global Animations & Effects 
+   Moved from BreakingNewsTicker to make them available everywhere (e.g., Stats section) */
+
+@keyframes glow-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(220,38,38,0); }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(220,38,38,0.7); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(220,38,38,0); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s infinite ease-in-out;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(220,38,38,0.8), 0 0 40px rgba(220,38,38,0.4);
+}
+
+.icon-glow {
+  filter: drop-shadow(0 0 8px rgba(220,38,38,0.8)) drop-shadow(0 0 15px rgba(220,38,38,0.4));
+}
