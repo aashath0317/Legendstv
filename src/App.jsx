@@ -13,8 +13,8 @@ import DiveDeeper from './components/sections/DiveDeeper';
 import Press from './components/sections/Press';
 import AsSeenIn from './components/sections/AsSeenIn';
 import Partners from './components/sections/Partners';
-//import BoardOfDirectors from './components/sections/BoardOfDirectors';
-//import FAQ from './components/sections/FAQ';
+import BoardOfDirectors from './components/sections/BoardOfDirectors';
+import FAQ from './components/sections/FAQ';
 
 export default function App() {
   return (
@@ -35,8 +35,8 @@ export default function App() {
         <Press />
         <AsSeenIn />
         <Partners />
-       {/* <BoardOfDirectors />
-        <FAQ /> */}
+       <BoardOfDirectors />
+        <FAQ />
       </main>
 
       <Footer />
