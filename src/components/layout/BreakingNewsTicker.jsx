@@ -22,7 +22,7 @@ const BreakingNewsTicker = () => (
                 <div className="flex items-center animate-marquee">
                     {[1, 2, 3, 4].map((i) => (
                         <div key={i} className="flex items-center">
-                            <span className="text-gray-300 text-xs font-bold uppercase tracking-wide px-4">Watch Co-Founder <span className="text-white">Akeel Asath</span> on Bloomberg</span>
+                            <span className="text-gray-300 text-xs font-bold uppercase tracking-wide px-4">Watch Founder <span className="text-white">Gary Clark</span> on Bloomberg</span>
                             <span className="text-red-600 mx-2 text-[10px]">●</span>
                             <span className="text-gray-300 text-xs font-bold uppercase tracking-wide px-4">Invest in the <span className="text-white">Future of LegendsTV</span> today</span>
                             <span className="text-red-600 mx-2 text-[10px]">●</span>
@@ -33,5 +33,6 @@ const BreakingNewsTicker = () => (
         </div>
     </div>
 );
+
 
 export default BreakingNewsTicker;
