@@ -13,6 +13,14 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const navLinks = [
+        { name: "Opportunity", href: "#opportunity" },
+        { name: "Innovation", href: "#innovation" },
+        { name: "Traction", href: "#traction" },
+        { name: "Roadmap", href: "#roadmap" },
+        { name: "Team", href: "#team" },
+    ];
+
     return (
         <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
             <BreakingNewsTicker />
@@ -25,22 +33,34 @@ const Header = () => {
                         LEGENDS<span className="text-red-600">TV</span>
                     </div>
 
+                    {/* Desktop Navigation */}
                     <nav className="hidden lg:flex space-x-8 items-center text-xs font-bold uppercase tracking-wider text-gray-300">
-                        <a href="#mission" className="hover:text-white transition">Opportunity</a>
-                        <a href="#platform" className="hover:text-white transition">Platform</a>
-                        <a href="#roadmap" className="hover:text-white transition">Roadmap</a>
+                        {navLinks.map((link) => (
+                            <a key={link.name} href={link.href} className="hover:text-white transition">
+                                {link.name}
+                            </a>
+                        ))}
                         <Button className="py-3 px-8 text-xs ml-4" animated={true}>Invest Now</Button>
                     </nav>
 
+                    {/* Mobile Menu Button */}
                     <button className="lg:hidden text-white z-50 relative" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen ? <X /> : <Menu />}
                     </button>
 
+                    {/* Mobile Navigation */}
                     {isMenuOpen && (
                         <div className="absolute top-full left-0 right-0 bg-zinc-900/95 backdrop-blur-lg border-b border-gray-800 p-6 flex flex-col items-center space-y-6 lg:hidden shadow-2xl animate-in slide-in-from-top-5">
-                            <a href="#mission" className="text-lg font-bold uppercase tracking-widest text-white" onClick={() => setIsMenuOpen(false)}>Opportunity</a>
-                            <a href="#platform" className="text-lg font-bold uppercase tracking-widest text-white" onClick={() => setIsMenuOpen(false)}>Platform</a>
-                            <a href="#roadmap" className="text-lg font-bold uppercase tracking-widest text-white" onClick={() => setIsMenuOpen(false)}>Roadmap</a>
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-lg font-bold uppercase tracking-widest text-white"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
                             <Button className="w-full" animated={true}>Invest Now</Button>
                         </div>
                     )}
