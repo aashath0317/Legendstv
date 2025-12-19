@@ -102,15 +102,15 @@ const ImpactShowcase = () => {
                     <div className="w-full xl:w-5/12 flex flex-col items-start text-center xl:text-left pt-4">
                         <h2 className="text-4xl md:text-6xl font-anton uppercase leading-[0.9] text-white mb-8">
                             Maximizing Impact <br /> Through <br />
-                            <span className="text-red-600">Athlete-Driven</span> <br />
+                            <span className="text-red-600">Legend-Driven</span> <br />
                             Brand Partnerships
                         </h2>
                         <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
                             <p>
-                                LegendsTV connects brands to audiences through authentic, athlete-led storytelling.
+                                LegendsTV connects brands to audiences through authentic, Legend-led storytelling.
                             </p>
                             <p>
-                                Our partners benefit from the unmatched influence and credibility of pro athletes, driving deeper engagement and higher conversion.
+                                Our partners benefit from the unmatched influence and credibility of pro Legends, driving deeper engagement and higher conversion.
                             </p>
                             <p>
                                 With custom integrations and talent-powered campaigns, we maximize brand impact while keeping fans at the center.
