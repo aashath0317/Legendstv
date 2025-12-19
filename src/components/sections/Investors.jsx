@@ -1,6 +1,6 @@
 import React from 'react';
 
-// You can move this data to src/data/athletes.js later if you prefer
+
 const athletes = [
     { name: "Travis Kelce", img: "/Travis Kelce.avif" },
     { name: "Chiney Ogwumike", img: "/Chiney Ogwumike.avif" },
