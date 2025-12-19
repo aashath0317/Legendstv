@@ -14,7 +14,7 @@ const Hero = () => {
 
             <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
                 <div className="space-y-8 pt-4 text-center lg:text-left">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-anton uppercase leading-[0.9] tracking-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-anton uppercase leading-[1] tracking-tight">
                         Join Sports Icons In <br />
                         Building The <br />
                         First Ever <span className="text-red-600">Legend-Fan</span> <br />
