@@ -56,7 +56,7 @@ const Partners = () => {
             name: "Deron Guidry",
             title: "Co-Founder",
             image: "/partners/2.webp",
-            bio: " bringing decades of expertise in athlete relations and business development to build lasting partnerships."
+            bio: " bringing decades of expertise in Legend relations and business development to build lasting partnerships."
         },
         {
             name: "Matthew Allinson",
@@ -119,7 +119,7 @@ const Partners = () => {
                         WRITING OUR PLAYBOOK
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-                        Our founding team combines deep expertise in sports content, marketing, and athlete relations.
+                        Our founding team combines deep expertise in sports content, marketing, and Legend relations.
                     </p>
                 </div>
 
