@@ -38,27 +38,27 @@ const MediaShowcase = () => {
     const items = [
         {
             title: 'The "Texas-Sized" Spotlight On LegendsTV',
-            desc: "LegendsTV was recently featured on Good Morning Texas, where Co-Founder Deron Guidrey shared how the network is changing the game in sports media. The segment highlights our athlete-owned model, and how we're positioning to disrupt a $75B industry by giving athletes a way to get more personal with their audiences.",
+            desc: "LegendsTV was recently featured on Good Morning Texas, where Co-Founder Deron Guidrey shared how the network is changing the game in sports media. The segment highlights our Legend-owned model, and how we're positioning to disrupt a $75B industry by giving Legends a way to get more personal with their audiences.",
             // Embed the video player directly
             media: createPlayer(VIDEO_SOURCES[0]),
             reverse: false
         },
         {
             title: "Watch Our Co-Founders At The New York Stock Exchange",
-            desc: "In this exclusive FinTechTV interview from the floor of the iconic New York Stock Exchange, our Co-Founders share the bold vision behind LegendsTV and how we're disrupting the sports media landscape. Get an inside look at the future of athlete-led content, the origin of the company, and why this movement is reshaping the entire industry.",
+            desc: "In this exclusive FinTechTV interview from the floor of the iconic New York Stock Exchange, our Co-Founders share the bold vision behind LegendsTV and how we're disrupting the sports media landscape. Get an inside look at the future of Legend-led content, the origin of the company, and why this movement is reshaping the entire industry.",
             media: createPlayer(VIDEO_SOURCES[1]),
             reverse: true
         },
         {
             title: "Invest And Secure Your Exclusive Event Invite",
-            desc: "All LegendsTV investors get exclusive access to OwnersFest—our annual celebration bringing together athlete partners, fans, and investors for an unforgettable experience. As an owner, you're not on the sidelines—you're in the game.",
+            desc: "All LegendsTV investors get exclusive access to OwnersFest—our annual celebration bringing together Legend partners, fans, and investors for an unforgettable experience. As an owner, you're not on the sidelines—you're in the game.",
             media: createPlayer(VIDEO_SOURCES[2]),
             hasButton: true,
             reverse: false
         },
         {
             title: "Watch Our Special Interview During Kyrie's 24-Hour Livestream",
-            desc: "Experience the unfiltered energy of our co-founders as they join Kyrie Irving's historic livestream. They discuss the importance of athlete ownership, creative freedom, and building a platform that truly serves the culture.",
+            desc: "Experience the unfiltered energy of our co-founders as they join Kyrie Irving's historic livestream. They discuss the importance of Legend ownership, creative freedom, and building a platform that truly serves the culture.",
             media: createPlayer(VIDEO_SOURCES[3]),
             reverse: true
         },
