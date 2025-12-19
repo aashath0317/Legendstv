@@ -5,7 +5,7 @@ const Platform = () => {
     const partners = ['fubo', 'DIRECTV', 'firetv', 'philo', 'YouTube TV', 'Apple TV', 'Roku', 'fubo', 'DIRECTV', 'firetv', 'philo', 'YouTube TV', 'Apple TV', 'Roku'];
 
     return (
-        <Section id="platform" className="bg-black">
+        <Section id="innovation" className="bg-black">
             <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }

@@ -3,7 +3,7 @@ import { Home, DollarSign, Users, Video } from 'lucide-react';
 
 const Stats = () => {
     return (
-        <section className="bg-black border-y border-gray-800 overflow-hidden">
+        <section id="traction" className="bg-black border-y border-gray-800 overflow-hidden">
             <div className="flex flex-col lg:flex-row h-auto lg:h-[800px]">
                 {/* Left Side: Stats */}
                 <div className="lg:w-1/2 p-8 lg:p-20 flex flex-col justify-center bg-black relative z-10">

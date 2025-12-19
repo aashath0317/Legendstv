@@ -106,7 +106,7 @@ const Partners = () => {
     ];
 
     return (
-        <section className="bg-black py-24 border-t border-gray-900 text-white overflow-hidden">
+        <section id="team" className="bg-black py-24 border-t border-gray-900 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
                 {/* Team Section Header */}
