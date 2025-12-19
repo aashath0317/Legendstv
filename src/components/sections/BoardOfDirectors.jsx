@@ -56,13 +56,13 @@ const BoardOfDirectors = () => {
             name: "Damian Lillard",
             title: "Board Member",
             image: "/strategic-advisors/2.webp",
-            bio: "Professional athlete with a keen eye for business innovation and community impact."
+            bio: "Professional Legend with a keen eye for business innovation and community impact."
         },
         {
             name: "Dwyane Wade",
             title: "Board Member",
             image: "/strategic-advisors/3.webp",
-            bio: "NBA legend and business mogul helping guide the future of athlete-owned media."
+            bio: "NBA legend and business mogul helping guide the future of Legend-owned media."
         },
         {
             name: "Travis Kelce",
@@ -74,7 +74,7 @@ const BoardOfDirectors = () => {
             name: "Kyrie Irving",
             title: "Board Member",
             image: "/strategic-advisors/5.webp",
-            bio: "World-class athlete focused on creative control and authenticity in sports media."
+            bio: "World-class Legend focused on creative control and authenticity in sports media."
         },
         {
             name: "Carmelo Anthony",
