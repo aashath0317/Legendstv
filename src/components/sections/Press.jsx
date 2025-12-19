@@ -30,12 +30,12 @@ const Press = () => {
     const bottomArticles = [
         {
             source: "Forbes",
-            title: "The Founders Who Are Redefining Athlete Media And Distribution With PlayersTV",
+            title: "The Founders Who Are Redefining Legend Media And Distribution With PlayersTV",
             img: "/in-the-press/down/1.webp"
         },
         {
             source: "ESSENCE",
-            title: "First-Ever Athlete-Owned TV Network Backed By Kyrie Irving, Dwyane Wade & More Lands Amazon Deal",
+            title: "First-Ever Legend-Owned TV Network Backed By Kyrie Irving, Dwyane Wade & More Lands Amazon Deal",
             img: "/in-the-press/down/2.webp"
         },
         {
@@ -45,7 +45,7 @@ const Press = () => {
         },
         {
             source: "Forbes",
-            title: "New PlayersTV Series 'Front Office' Will Highlight The Investing Acumen Of Athlete Entrepreneurs",
+            title: "New PlayersTV Series 'Front Office' Will Highlight The Investing Acumen Of Legend Entrepreneurs",
             img: "/in-the-press/down/4.webp"
         },
         {
@@ -55,7 +55,7 @@ const Press = () => {
         },
         {
             source: "TechCrunch",
-            title: "How Athlete-Driven Media Is changing The Landscape Of Sports Entertainment",
+            title: "How Legend-Driven Media Is changing The Landscape Of Sports Entertainment",
             img: "/in-the-press/down/6.webp"
         },
         {
