@@ -21,7 +21,7 @@ const Hero = () => {
                         Owned Media Company
                     </h1>
                     <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-                        As the first-ever legend and fan-owned media platform, we’re building the future of sports media. Supported by 50+ legend investors, diverse content, and advanced distribution, our mission is well underway. For a limited period, we’re inviting investors to participate in our exclusive ownership structure.
+                        We're pioneering a revolutionary approach as a media platform co-owned by athletes, actors, entrepreneurs and fans. With a variety of athletes - actors-entertainer-investors, a rich variety of content, and state-of-the-art distribution channels, we're already making significant progress toward our vision. For a limited time, we're extending our exclusive ownership opportunity to investors like you.
                     </p>
                     <p className="font-bold text-lg" >Join us as a shareholder and help shape the future of how fans connect with professional athletes.</p>
 
