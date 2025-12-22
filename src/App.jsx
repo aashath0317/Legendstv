@@ -18,7 +18,7 @@ import FAQ from './components/sections/FAQ';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-red-600 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-red-600 selection:text-white">
 
       <Header />
 
@@ -35,7 +35,7 @@ export default function App() {
         <Press />
         <AsSeenIn />
         <Partners />
-       <BoardOfDirectors />
+        <BoardOfDirectors />
         <FAQ />
       </main>
 
