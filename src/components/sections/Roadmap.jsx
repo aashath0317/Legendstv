@@ -66,26 +66,39 @@ const RoadmapList = () => {
 const Roadmap = () => {
     return (
         <section id="roadmap" className="bg-black py-24 border-y border-gray-800">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative items-start">
-                <div className="hidden lg:block sticky top-32">
-                    <div>
-                        <div className="text-gray-400 font-bold italic uppercase tracking-wider text-sm mb-4">Roadmap</div>
-                        <h2 className="text-5xl md:text-6xl font-anton uppercase leading-none text-white mb-8">
-                            Built Different: <br /> A Track Record of <br /> Transformation
-                        </h2>
-                        <p className="text-gray-400 text-lg leading-relaxed font-medium">
-                            PlayersTV is riding massive momentum, fueled by over <span className="text-white font-bold">$6.4M*</span> raised...
-                        </p>
-                        <p className="text-[10px] text-gray-600 mt-4">*The amount includes related entities.</p>
+            {/* CHANGE 1: Removed 'items-start'. 
+               This ensures the left column stretches to match the height of the right list.
+            */}
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative">
+
+                {/* CHANGE 2: The Left Column.
+                   We removed 'sticky' from here. This div is now the "Tall Track".
+                */}
+                <div className="hidden lg:block relative">
+                    {/* CHANGE 3: The Sticky Wrapper.
+                       We put 'sticky top-32' here. This element floats inside the tall track.
+                    */}
+                    <div className="sticky top-32">
+                        <div>
+                            <div className="text-gray-400 font-bold italic uppercase tracking-wider text-sm mb-4">Roadmap</div>
+                            <h2 className="text-5xl md:text-6xl font-anton uppercase leading-none text-white mb-8">
+                                Built Different: <br /> A Track Record of <br /> Transformation
+                            </h2>
+                            <p className="text-gray-400 text-lg leading-relaxed font-medium">
+                                PlayersTV is riding massive momentum, fueled by over <span className="text-white font-bold">$6.4M*</span> raised...
+                            </p>
+                            <p className="text-[10px] text-gray-600 mt-4">*The amount includes related entities.</p>
+                        </div>
                     </div>
                 </div>
 
-                {/* Mobile Header */}
+                {/* Mobile Header (No changes needed here) */}
                 <div className="lg:hidden mb-8">
                     <div className="text-gray-400 font-bold italic uppercase tracking-wider text-sm mb-4">Roadmap</div>
                     <h2 className="text-4xl font-anton uppercase leading-none text-white mb-4">Built Different...</h2>
                 </div>
 
+                {/* Right Column List (No changes needed here) */}
                 <div className="relative pl-8 lg:border-l-0 border-l-2 border-transparent">
                     <RoadmapList />
                 </div>
