@@ -93,7 +93,7 @@ const Roadmap = () => {
                     </h2>
                     {/* Added missing paragraph and disclaimer */}
                     <p className="text-gray-400 text-lg leading-relaxed font-medium">
-                        PlayersTV is riding massive momentum, fueled by over <span className="text-white font-bold">$6.4M*</span> raised...
+                        LegendsTV is building powerful momentum, supported by more than $6.4M* raised from an exceptional group of iconic Legends and over 2,200 dedicated fan investors. We’ve secured premium distribution across OTT, CTV, and digital platforms, delivering direct access to millions of fans worldwide. Backed by a high-caliber lineup of Legend-owners and creators, our content reaches audiences exactly where they engage. With the addition of advanced advertising technology, LegendsTV is positioned to scale monetization faster than ever—transforming audience attention into meaningful revenue growth.
                     </p>
                     <p className="text-[10px] text-gray-600 mt-4">*The amount includes related entities.</p>
                 </div>
