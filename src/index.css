@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 0. Global Overflow Handling (Fixes Sticky Positioning) */
+body {
+    @apply bg-black text-white overflow-x-hidden;
+}
+
 /* 1. Enable Smooth Scrolling Globally */
 html {
     scroll-behavior: smooth;
