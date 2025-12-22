@@ -21,17 +21,9 @@ const Hero = () => {
                         Owned Media Company
                     </h1>
                     <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-                        We're making history as the first-ever Legend and fan-owned media platform. With 50+ Legend investors, diverse content, and cutting-edge distribution, our mission is well underway.
+                        As the first-ever legend and fan-owned media platform, we’re building the future of sports media. Supported by 50+ legend investors, diverse content, and advanced distribution, our mission is well underway. For a limited period, we’re inviting investors to participate in our exclusive ownership structure.
                     </p>
-
-                    <div className="border-l-4 border-red-600 pl-6 bg-white/5 py-5 pr-6 rounded-r-sm text-left max-w-xl">
-                        <p className="text-white font-bold text-base uppercase font-anton tracking-wide mb-1">
-                            What is a "Legend"?
-                        </p>
-                        <p className="text-gray-400 text-sm">
-                            Any former or current professional Legend, as well as Hollywood actors, defining the culture of tomorrow.
-                        </p>
-                    </div>
+                    <p className="font-bold text-lg" >Join us as a shareholder and help shape the future of how fans connect with professional athletes.</p>
 
                     <div className="pt-8">
                         <Button animated={true} className="w-full md:w-auto text-lg py-5 px-12 shadow-[0_0_30px_rgba(220,38,38,0.5)]">
